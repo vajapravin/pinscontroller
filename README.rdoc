@@ -1,0 +1,3 @@
+PinsController is collection of ads, blogs, products and favourite things. User can like pins and share on social sites. Global discussion on pin.
+
+visit: http://pinscontroller.com

@@ -1,0 +1,16 @@
+development: &defaults
+  app_id: <%= ENV["FB_APP_ID"] %>
+  client_secret: <%= ENV["FB_CLIENT_SECRET"] %>
+  perms: manage_pages, offline_access
+  page_id: <%= ENV["FB_PAGE_ID"] %>
+  user_id: <%= ENV["FB_USER_ID"] %>
+
+test:
+  <<: *defaults
+
+production:
+  app_id: <%= ENV["FB_APP_ID"] %>
+  client_secret: <%= ENV["FB_CLIENT_SECRET"] %>
+  perms: manage_pages, offline_access
+  page_id: <%= ENV["FB_PAGE_ID"] %>
+  user_id: <%= ENV["FB_USER_ID"] %>

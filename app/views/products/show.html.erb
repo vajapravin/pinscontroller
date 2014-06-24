@@ -1,0 +1,56 @@
+<div class="container">
+	<div id="k-main-wrap">
+		<div id="k-main">
+
+			<div class="article-wrapper"><div id="post-featured-image-wrap">
+				<div id="post-featured-image">
+					<figure class="stretchy" style="display: block; opacity: 1;"><a href="<%= @product.image %>" class="cboxElement" title=""><img class="colorbox-24680" src="<%= @product.image %>" alt=""></a></figure>
+				</div><!-- end featured image -->
+			</div><!-- article -->
+
+			<article id="post-2113" class="post-2113 post type-post status-publish format-image hentry category-news tag-flickr tag-rolands-lakis clearfix" role="article" itemscope="">
+
+				<header class="cn-header">
+					<h1 class="entry-title" itemprop="headline">
+						<%= @product.name.titlecase rescue "" %>
+					</h1>
+				</header><!-- end article header -->
+
+				<section class="entry-excerpt">
+					<p><%= @product.desc %></p>
+				</section>
+
+				<span class="liner"><span class="fatter"></span></span>        
+				<div class="entry-meta">
+					<% @product.categories.each do |category| %>
+					<span class="formats pf-image">
+						<a href="/products?c=<%= category.name.downcase %>"><%= category.name.titlecase %></a>
+					</span>
+					<% end %>
+					<span class="entry-date"><%= @product.created_at.strftime("%d %B, %Y") %></span>
+					&nbsp &nbsp <%= link_to "Edit".html_safe, "/products/#{@product.id}/edit" if only_admin %>
+					<% if user_signed_in? %>
+						<span class="pull-right">
+			                <a href="javascript:void(0);" class="like-this-post" id="<%=@product.id%>-like-this-post-up" data-vote-type="up" data-product-id="<%=@product.id%>" data-user-id="<%=current_user.id%>"><i class="fa fa-caret-square-o-up"></i></a>
+			                <a href="javascript:void(0);" class="like-this-post" id="<%=@product.id%>-like-this-post-down" data-vote-type="down" data-product-id="<%=@product.id%>" data-user-id="<%=current_user.id%>"><i class="fa fa-caret-square-o-down"></i></a>
+			                <span><%= @product.votes %></span>
+		               	</span>
+	              	<% end %>
+	              	<div class="social pull-right">
+		                <%= link_to_function "<i class='fa fa-facebook-square'></i>".html_safe, "postFacebook('http://#{self.request.host}/products/#{@product.slug}','http://#{self.request.host}#{@product.image}', '#{escapeHTML(@product.name)}', '#{escapeHTML(@product.desc)}')" %> 
+		                <%= link_to_function "<i class='fa fa-twitter-square'></i>".html_safe, "return popitup('http://twitter.com/share?url=http://#{self.request.host}/products/#{@product.slug}&text=#{escapeHTML(@product.name)}&via=GreenThumb&count=horizontal')", target: "_blank", rel: "nofollow"  %>
+	              	</div>
+				</div>
+
+				<div id="comments" style="background-color:#85c194;padding:10px;margin-top:50px;">
+					<%= render partial: "/shared/disqus", locals: {product: @product} %>
+				</div>				
+				
+				</article> <!-- end article -->
+
+			</div><!-- article end -->
+
+
+		</div>
+	</div>
+</div>

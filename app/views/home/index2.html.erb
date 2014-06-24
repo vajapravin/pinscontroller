@@ -1,0 +1,59 @@
+<div id='k-main1' class='gridalicious'>
+	<% Product.all.each do |product| %>
+		<div class="galcolumn">
+
+		<article id="post-<%=product.id%>" class="post-<%=product.id%> post type-post status-publish format-image hentry category-news tag-egypt tag-flickr tag-tinou-bao tile text-left" role="article" style="margin-bottom: 0px; zoom: 1; opacity: 1;">
+
+			<section class="tile-content-wrap">
+
+				<figure class="featured-preview">
+					<a href="<%= product.image %>" class="cboxElement" rel="nofollow" title="<%= product.name %>"><img src="<%= product.image %>" class="colorbox-1296979" alt="<%= product.name %>"></a>
+				</figure>
+
+				<section>
+
+					<header>
+
+					<h1 class="entry-title"><a href="http://thewall.sofarider.com/news/egypt-by-tinou-bao/" rel="bookmark" title="<%= product.name %>"><%= product.name %></a></h1><span class="liner"><span class="fatter"></span></span>			
+					<div class="entry-meta">
+						<% product.categories.each do |category| %>
+							<span class="formats pf-image">
+								<a href=""><%= category.name.titlecase rescue '' %></a>
+							</span>
+						<% end %>
+						<span class="entry-date"><%= product.created_at.strftime('%d %B, %Y') %></span><span class="perma"><a href="http://thewall.sofarider.com/news/egypt-by-tinou-bao/" rel="bookmark" title="<%= product.name %>">permalink</a></span>				</div>
+
+					</header> <!-- end article header -->
+
+					<section class="entry-content">
+						<p><%= product.desc %>
+						<%= link_to "Edit".html_safe, "/products/#{product.id}/edit", class: 'pull-right' if only_admin %>
+						</p>
+					</section> <!-- end article section -->
+
+					<footer>
+						<% if user_signed_in? %>
+							<a href="javascript:void(0);" class="like-this-post" id="<%=product.id%>-like-this-post" data-product-id="<%=product.id%>" data-user-id="<%=current_user.id%>" data-vote="<%=current_user.voted(product)%>" title="Like this post?">
+								<%= current_user.voted(product) == "like" ? "<i class='fa fa-heart'></i>".html_safe : "<i class='fa fa-heart-o'></i>".html_safe %>
+							</a>
+							<span>141</span> likes
+						<% end %>
+						<span class="entry-comments">
+							<a href="http://thewall.sofarider.com/news/egypt-by-tinou-bao/#comments" title="Comment on <%= product.name %>">1 comment
+							</a>
+						</span>
+						<div class="social pull-right">
+							<%= link_to_function "<i class='fa fa-facebook'></i>".html_safe, "postFacebook('http://#{self.request.host}/products/#{product.slug}','http://#{self.request.host}#{product.image}', '#{escapeHTML(product.name)}', '#{escapeHTML(product.desc)}')" %> 
+							<%= link_to_function "<i class='fa fa-twitter'></i>".html_safe, "return popitup('http://twitter.com/share?url=http://#{self.request.host}/products/#{product.slug}&text=#{escapeHTML(product.name)}&via=GreenThumb&count=horizontal')", target: "_blank", rel: "nofollow"  %>
+						</div>
+					</footer>
+
+				</section>
+
+			</section>
+
+		</article>
+
+		</div>
+	<% end %>
+</div>

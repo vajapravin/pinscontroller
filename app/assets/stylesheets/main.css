@@ -1,0 +1,206 @@
+@font-face
+{
+	font-family: "Myriad Pro";
+	src: url(/assets/MYRIADPRO-SEMIBOLD.OTF);
+}
+@font-face
+{
+	font-family: "VarelaRound-Regular";
+	src: url(/assets/VarelaRound-Regular.ttf);
+}
+header{
+	background-color: #60bf78;
+	padding-top: 1%;
+	width: 100%;
+	min-height: 100px;
+	padding-bottom: 1%;
+}
+/*.navbar-brand{background:url(/assets/the_green_thumb2.png);height:60px;width:312px;margin-right: 15px;margin-top: -10px;}*/
+.navbar-brand{color: #000; height:60px;width:312px;margin-right: 15px;margin-top: -10px;}
+.navbar-logo{height: 60px;width: 312px;margin-right: 15px;font-size: 40px;margin-top: -5px;font-weight: bold;color: #000;}
+.navbar-default{background-color:#60bf78;border-color:#60bf78;}
+/*.customized-nav, .navbar-right{margin-top:10px;}*/
+.navbar-default .customized-nav>li>a, .navbar-default .customized-nav>.active>a, .navbar-default .customized-nav>.active>a:focus{
+	font-family: "Myriad Pro";
+	color:  #444343;
+	font-size: 18px;
+	line-height: 1;
+	background-color: #60bf78;
+	text-transform: uppercase;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.navbar-default .navbar-nav>li>a:hover{color:#fff;}
+.navbar-default .navbar-toggle{border-color: #60bf78;}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus{background-color: #57a56b;}
+.navbar-toggle>i{font-size:25px;}
+.navbar-default .customized-nav>.open>a, .navbar-default .customized-nav>.open>a:hover, .navbar-default .customized-nav>.open>a:focus{background-color: #57a56b;}
+.navbar-right{
+	margin-top:10px;
+}
+.navbar-default .navbar-nav>li>a{color: #1c1c1c;}
+.navbar-right>li>a{
+	font-family: "VarelaRound-Regular";
+	font-size: 15px;
+	line-height: 1.286;
+	text-transform: uppercase;
+	padding-top:0px;
+	padding-bottom:0px;
+}
+.navbar-right>li.ln-left{
+	border-left:2px solid #1c1c1c;
+}
+.categories_div{margin: 20px;width: 75%;}
+.categories_div, .categories_div>a{
+	font-family: "VarelaRound-Regular";
+	color:  #60bf78;
+	font-size: 16px; /* Approximation due to font substitution */
+	line-height: 2.25; /* Approximation due to font substitution */
+	text-transform: uppercase;
+}
+.search-form{
+	position: absolute;
+	right: 20px;
+	bottom: -20px;
+}
+.search-form>i.fa{
+	position: absolute;
+	z-index: 1000;
+	margin: 8px;
+}
+.search-form>i.fa-search{
+	left: 0px;
+}
+.search-form>i.fa-long-arrow-right{
+	right: 0px;
+	border:1px solid #000;
+	margin: 3px;
+	padding: 5px;
+	cursor: pointer;
+}
+.search-txt{
+	background-color:  #60bf78;
+	border-width: 1px;
+	border-color: #656464;
+	border-style: solid;
+	width: 220px;
+	height: 31px;
+	color: #656464;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+::-webkit-input-placeholder {
+   color: #656464;
+   text-transform: uppercase;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #656464;  
+   text-transform: uppercase;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #656464;  
+   text-transform: uppercase;
+}
+
+:-ms-input-placeholder {  
+   color: #656464;  
+   text-transform: uppercase;
+}
+.itm1{background-image: url(/assets/BIRDKNOCKER01.png); height: 392px;background-repeat: no-repeat;background-size: 100% 100%;}
+.itm2{background-image: url(/assets/ECLECTICARTWRK.jpg); height: 392px;background-repeat: no-repeat;background-size: 100% 100%;}
+.itm3{background-image: url(/assets/SIGN.jpg); height: 392px;background-repeat: no-repeat;background-size: 100% 100%;}
+.galry{
+	background-image: url(/assets/BIRDKNOCKER.jpg); height: 392px;background-repeat: no-repeat;background-size: 100% 100%;
+}
+.galry{
+	margin-left:0px;
+	margin-right:0px;
+}
+.galry .content{
+	font-family: CoreCircus;
+	font-size: 1.5vw;
+	position: relative;
+	background-color:  rgba(255, 255, 255, 0.85);
+	border-width: 15px;
+	border-color:  rgba(96, 191, 120, 0.85);
+	border-style: solid;
+	height: 197px;
+	width: 30%;
+    margin: 100px auto;
+	text-align: center;
+	padding-top: 5.5vh;
+	line-height: 1.586;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.galry .content .beta{
+	position: absolute;
+	font-family: CoreCircus;
+	color:  #4ecdc4;
+	font-size: 1.2vw;
+	line-height: 1.7;
+}
+.dv-deals{
+	background-color: #252525;
+	padding: 10px 25px 25px 25px;
+	width: 100%;
+	height: 796px;
+}
+.dv-deals .caption{
+	text-transform:uppercase;
+	font-family: "Myriad Pro";
+	color:  #ffffff;
+	font-size: 20px;
+	line-height: 2.833;
+	width: 164px;
+	height: 15px;
+}
+footer.bottom-footer{
+	background-color:  #57ab6c;
+	width: 100%;
+	height: 300px;
+	padding: 20px;
+	font-family: "Myriad Pro";
+	color:  #057521;
+}
+.f1{
+	font-size: 16px;
+	line-height: 1;
+	margin-top: 10px;
+}
+.f2>a{
+	font-family: "Myriad Pro";
+	color:  #057521;
+	font-size: 10px;	
+}
+footer.bottom-footer .ft-content a{
+	font-family: "Myriad Pro";
+	color:  #057521;
+	font-size: 16px;
+	line-height: 1.5;
+	text-transform: uppercase;
+}
+footer.bottom-footer a:hover{
+	color: #fff;
+}
+.dv-deals .container{
+	width: 80%;
+}
+.dv-deals .container .item{
+	margin: 20px;
+}
+p.bg-success{
+	padding: 10px;
+}
+.galcolumn a{color: #60bf78;}
+.galcolumn a:hover{color: #057521;}
+.container{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.cn-header{
+	background-color: #fff;
+}

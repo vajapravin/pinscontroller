@@ -1,0 +1,21 @@
+<header>
+  <div class="container">
+    <div class="navbar navbar-default" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <i class="fa fa-bars"></i>
+        </button>
+        <a class="navbar-brand navbar-logo" href="/">PinsController</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <%= users_nav_links %>
+        <%= form_tag "/products", class: "search-form", method: :get do %>
+          <i class="fa fa-search"></i>
+          <input type="text" name="q" class="col-md-12 pull-right search-txt" placeholder="Search" required=true>
+          <i class="fa fa-long-arrow-right" onclick="$(this).closest('form').submit();"></i>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</header>

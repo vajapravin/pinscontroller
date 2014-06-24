@@ -1,0 +1,48 @@
+<%= form_for(@product, role: 'form') do |f| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% @product.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label "Name" %>
+    <%= f.text_field :name, class: 'form-control', placeholder: 'Name', required: true, autofocus: true %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Image" %>
+    <% if controller_name == "products" && action_name == "edit" %>
+      <%= f.file_field :image, class: 'form-control', placeholder: 'Image' %>
+    <% else %> 
+      <%= f.file_field :image, class: 'form-control', placeholder: 'Image', required: true %>
+    <% end %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Link" %>
+    <%= f.url_field :link, class: 'form-control', placeholder: 'Link' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Desc" %>
+    <%= f.text_area :desc, class: 'form-control', placeholder: 'Desc', required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Choose Categories" %>
+    <%= f.select :category_ids, options_for_select(Category.all.map {|c| [c.name, c.id] }, selected: @product.category_ids), {}, {class: 'form-control chzn-select', multiple: true, placeholder: "Choose categories"} %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit :save, class: 'btn btn-primary' %>
+    <%= link_to 'Back', products_path, class: 'btn btn-default' %>
+  </div>
+<% end %>

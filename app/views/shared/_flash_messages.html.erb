@@ -1,0 +1,24 @@
+<% if flash!=nil %>
+<ul>
+
+	<% flash.each do |key, value| %>
+		<% if key.to_s == "error" || key.to_s == "alert" %>
+			<% if value.kind_of?(Array) %>
+				<% value.each do |error| %>
+	 				<li style="color:red"><%= error %></li>
+	 			<% end %>
+	 		<% else %>
+	 			<li style="color:red"><%= value %></li>
+	 		<% end %>	
+		<% else %>
+			<% if value.kind_of?(Array) %>
+				<% value.each do |msg| %>
+	 				<li style="color:green"><%= msg %></li>
+	 			<% end %>
+	 		<% else %>
+	 			<li style="color:green"><%= value %></li>
+	 		<% end %>												
+		<% end %>
+	<% end %>
+</ul>	
+<% end %>
