@@ -8,6 +8,11 @@ class ApplicationController < ActionController::Base
 	def validate_admin_user
 		redirect_to root_path if !user_signed_in? || !current_user.is_admin
 	end
+	
+	#User can add products --Pushkar
+	def validate_user
+		redirect_to root_path if !user_signed_in?
+	end
 
 	protected
 

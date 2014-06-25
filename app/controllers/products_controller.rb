@@ -1,6 +1,9 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:edit, :update, :destroy]
-  before_action :validate_admin_user, only: [:edit, :update, :destroy]
+  #before_action :validate_admin_user, only: [:new, :edit, :update, :destroy]
+  #User can add products --Pushkar
+  before_action :validate_user, only: [:new, :edit, :update, :destroy]
+
 
   # GET /products
   # GET /products.json
