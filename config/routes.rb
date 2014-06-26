@@ -1,7 +1,7 @@
 GreenThumb::Application.routes.draw do
   resources :categories
 
-  root to: "home#index"
+  root to: "products#index"
 
   devise_for :users, :controllers => {:registrations => 'registrations'} do
     get 'logout' => 'devise/sessions#destroy'
