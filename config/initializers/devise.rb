@@ -4,7 +4,11 @@ Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
-  # config.secret_key = '2a76ee37ea4ccfaa55b5427f5ce2256cd0c96abebd76a21cf7be55fc370ca90f4b11c9f21136dc4a1c7bed03972af62953b5d2fb1be4a90aad4da265f2a1e9b3'
+  GreenThumb::Application.config.secret_token = if Rails.env.development? or Rails.env.test?
+    config.secret_key = 'bc0ea5e41c25df36243cc24096f34dfb6bc9542bf63a459ea79a33c8ff8a2444f4f7f85c69bb501b12c91e7a653e3263fe7e9560be2e4fcf9c0c40874e342e14'
+  else
+    config.secret_key = ENV['PIN_CONTROLLER_DEVISE_SECRET']
+  end
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
