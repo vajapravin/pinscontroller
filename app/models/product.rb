@@ -28,4 +28,8 @@ class Product < ActiveRecord::Base
     def votes
     	self.get_upvotes.size - self.get_downvotes.size
     end
+
+    def get_image
+        self.image.try(:nil).nil? ? 'http://placehold.it/250x300' : self.image
+    end
 end

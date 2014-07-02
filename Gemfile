@@ -49,8 +49,9 @@ gem 'devise'
 gem 'omniauth-facebook', '~> 1.6.0'
 gem 'omniauth-twitter', '~> 1.0.1'
 gem "annotate", "~> 2.6.1"
-gem 'pry'
+gem 'pry', group: [:development]
 gem "carrierwave", "~> 0.10.0"
 gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 gem "seed_dump"
 gem 'acts_as_votable', '~> 0.9.0'
+gem 'carrierwave-dropbox'

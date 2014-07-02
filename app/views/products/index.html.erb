@@ -8,7 +8,7 @@
         <section class="tile-content-wrap">
 
           <figure class="featured-preview">
-            <a href="<%= product.image %>" class="cboxElement" rel="nofollow" title="<%= product.name %>"><img src="<%= product.image %>" class="colorbox-1296979" alt="<%= product.name %>"></a>
+            <a href="<%= product.get_image %>" class="cboxElement" rel="nofollow" title="<%= product.name %>"><img src="<%= product.get_image %>" class="colorbox-1296979" alt="<%= product.name %>"></a>
           </figure>
 
           <section>
@@ -43,7 +43,7 @@
                 </a>
               </span>
               <div class="social pull-right">
-                <%= link_to_function "<i class='fa fa-facebook-square'></i>".html_safe, "postFacebook('http://#{self.request.host}/products/#{product.slug}','http://#{self.request.host}#{product.image}', '#{escapeHTML(product.name)}', '#{escapeHTML(product.desc)}')" %> 
+                <%= link_to_function "<i class='fa fa-facebook-square'></i>".html_safe, "postFacebook('http://#{self.request.host}/products/#{product.slug}','http://#{self.request.host}#{product.get_image}', '#{escapeHTML(product.name)}', '#{escapeHTML(product.desc)}')" %> 
                 <%= link_to_function "<i class='fa fa-twitter-square'></i>".html_safe, "return popitup('http://twitter.com/share?url=http://#{self.request.host}/products/#{product.slug}&text=#{escapeHTML(product.name)}&via=GreenThumb&count=horizontal')", target: "_blank", rel: "nofollow"  %>
               </div>
             </footer>
